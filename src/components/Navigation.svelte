@@ -3,7 +3,7 @@
     let isOpen = false;
 </script>
 
-<nav class:mobile={isOpen}>
+<nav class:open={isOpen}>
     <button
         on:click={() => {
             isOpen = !isOpen;
@@ -13,7 +13,6 @@
         <div />
         <div />
     </button>
-
     <ul>
         <li
             aria-current={$page.url.pathname === '/' ? 'page' : undefined}
@@ -52,14 +51,17 @@
         }
 
         li {
-            border: 2px solid transparent;
-            border-radius: 0.4em;
-            padding: 0.2em 0.6em;
-            transition: border 150ms ease-in-out;
-
+            a {
+                border: 2px solid transparent;
+                border-radius: 0.4em;
+                padding: 0.2em 0.6em;
+                transition: border 150ms ease-in-out;
+            }
             &:hover,
             &.active {
-                border: 2px solid var(--main-theme-text-color);
+                a {
+                    border: 2px solid var(--main-theme-text-color);
+                }
             }
         }
 
@@ -81,41 +83,54 @@
                 width: 90%;
                 border: 1px solid white;
                 margin-inline: auto;
+
+                transition: transform 150ms ease;
             }
 
             div:nth-child(1) {
                 margin-block-start: calc(var(--button-size) / 3 - 2 * 2px - 1px);
             }
 
-            div:nth-child(2) {
+            @media only screen and (max-width: 1024px) {
+                display: flex;
             }
         }
 
-        &.mobile {
-            ul {
-                transform: translateY(0);
+        &.open {
+            button {
+                div:nth-child(1) {
+                    transform: translateY(8px) rotate(45deg);
+                }
+                div:nth-child(2) {
+                    display: none;
+                }
+                div:nth-child(3) {
+                    transform: rotate(-45deg) translateY(10%);
+                }
             }
         }
 
         @media only screen and (max-width: 900px) {
             position: absolute;
-            left: 0;
+            right: 0;
             top: 0;
-            width: 100%;
             height: var(--header-height);
-
-            button {
-                display: flex;
-            }
+            width: 70%;
 
             ul {
-                transform: translateY(-120%);
+                transform: translateX(120%);
                 transition: transform 150ms ease-in-out;
+                align-items: center;
                 position: relative;
                 flex-direction: column;
                 margin-block-start: 0;
                 padding: 3rem 4rem;
                 background-color: rgba(16, 16, 16, 0.85);
+            }
+            &.open {
+                ul {
+                    transform: translateX(0);
+                }
             }
         }
     }
