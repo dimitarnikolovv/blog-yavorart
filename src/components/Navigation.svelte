@@ -1,0 +1,122 @@
+<script>
+    import { page } from '$app/stores';
+    let isOpen = false;
+</script>
+
+<nav class:mobile={isOpen}>
+    <button
+        on:click={() => {
+            isOpen = !isOpen;
+        }}
+    >
+        <div />
+        <div />
+        <div />
+    </button>
+
+    <ul>
+        <li
+            aria-current={$page.url.pathname === '/' ? 'page' : undefined}
+            class:active={$page.url.pathname === '/' ? true : false}
+        >
+            <a href="/">Home</a>
+        </li>
+        <li
+            aria-current={$page.url.pathname === '/gallery' ? 'page' : undefined}
+            class:active={$page.url.pathname === '/gallery' ? true : false}
+        >
+            <a href="/gallery">Gallery</a>
+        </li>
+        <li
+            aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}
+            class:active={$page.url.pathname === '/contact' ? true : false}
+        >
+            <a href="/contact">Contact me</a>
+        </li>
+        <li
+            aria-current={$page.url.pathname === '/shop' ? 'page' : undefined}
+            class:active={$page.url.pathname === '/shop' ? true : false}
+        >
+            <a href="/shop">Shop</a>
+        </li>
+    </ul>
+</nav>
+
+<style lang="scss">
+    nav {
+        font-size: 1.2rem;
+
+        ul {
+            display: flex;
+            gap: 2.2rem;
+        }
+
+        li {
+            border: 2px solid transparent;
+            border-radius: 0.4em;
+            padding: 0.2em 0.6em;
+            transition: border 150ms ease-in-out;
+
+            &:hover,
+            &.active {
+                border: 2px solid var(--main-theme-text-color);
+            }
+        }
+
+        button {
+            --button-size: 2.4rem;
+            display: none;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-inline-start: calc(100% - (var(--button-size) * 1.5) - 4px);
+            width: var(--button-size);
+            height: var(--button-size);
+            background-color: transparent;
+            margin-block: calc(var(--header-height) / 4.8);
+
+            border: 2px solid white;
+            border-radius: 0.4rem;
+
+            div {
+                width: 90%;
+                border: 1px solid white;
+                margin-inline: auto;
+            }
+
+            div:nth-child(1) {
+                margin-block-start: calc(var(--button-size) / 3 - 2 * 2px - 1px);
+            }
+
+            div:nth-child(2) {
+            }
+        }
+
+        &.mobile {
+            ul {
+                transform: translateY(0);
+            }
+        }
+
+        @media only screen and (max-width: 900px) {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: var(--header-height);
+
+            button {
+                display: flex;
+            }
+
+            ul {
+                transform: translateY(-120%);
+                transition: transform 150ms ease-in-out;
+                position: relative;
+                flex-direction: column;
+                margin-block-start: 0;
+                padding: 3rem 4rem;
+                background-color: rgba(16, 16, 16, 0.85);
+            }
+        }
+    }
+</style>
