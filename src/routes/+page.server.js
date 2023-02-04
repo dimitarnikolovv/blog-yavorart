@@ -11,7 +11,9 @@ export async function load({ fetch, request }) {
 
     if (document && portfolio && blogPosts) {
         return { document, portfolio, blogPosts };
-    }
+    } else if (!document) return { portfolio, blogPosts };
+    else if (!portfolio) return { document, blogPosts };
+    else if (!blogPosts) return { document, portfolio };
 
     error(404, 'Not found');
 }

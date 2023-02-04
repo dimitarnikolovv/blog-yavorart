@@ -8,9 +8,9 @@
     <div class="description">
         <div class="content">
             {@html prismicH.asHTML(post.data.content)}
-            <span class="date"
+            <!-- <span class="date"
                 >Date: {new Date(post.last_publication_date).toLocaleDateString('bg')}</span
-            >
+            > -->
         </div>
     </div>
     <div class="maskparent" class:active={isActive}>
@@ -30,9 +30,9 @@
 </article>
 
 <style lang="scss">
-    span.date {
-        font-size: 0.8rem;
-    }
+    // span.date {
+    //     font-size: 0.8rem;
+    // }
     article {
         width: 90%;
         margin-inline: auto;
