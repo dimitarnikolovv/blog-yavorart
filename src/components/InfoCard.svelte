@@ -1,17 +1,13 @@
 <script>
-    export let imageUrl = '';
+    import * as prismicH from '@prismicio/helpers';
+    export let component;
 </script>
 
 <section class="info-card">
-    <img src={imageUrl} alt="" />
+    <img src={prismicH.asImageSrc(component.data.image)} alt="" />
     <div class="content">
         <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum doloremque
-            quibusdam at provident incidunt dolore et soluta numquam cupiditate! Consequatur, nam!
-            Debitis quibusdam accusamus enim commodi assumenda cumque impedit et. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Nulla sed incidunt tenetur quidem id vitae
-            deleniti ea neque quaerat, necessitatibus aliquam dolorem hic sit nemo harum facilis
-            nesciunt voluptatum adipisci.
+            {@html prismicH.asHTML(component.data.content)}
         </p>
     </div>
 </section>

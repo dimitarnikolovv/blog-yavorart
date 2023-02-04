@@ -16,5 +16,9 @@
         "svelte-preprocess": "^5.0.1",
         "vite": "^4.0.0"
     },
-    "type": "module"
+    "type": "module",
+    "dependencies": {
+        "@prismicio/client": "^6.7.3",
+        "@prismicio/helpers": "^2.3.9"
+    }
 }

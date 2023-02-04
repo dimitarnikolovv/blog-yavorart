@@ -1,5 +1,6 @@
 <script>
     import { page } from '$app/stores';
+    export let navigation;
     let isOpen = false;
 </script>
 
@@ -14,24 +15,14 @@
         <div />
     </button>
     <ul>
-        <li
-            aria-current={$page.url.pathname === '/' ? 'page' : undefined}
-            class:active={$page.url.pathname === '/' ? true : false}
-        >
-            <a href="/">Home</a>
-        </li>
-        <li
-            aria-current={$page.url.pathname === '/gallery' ? 'page' : undefined}
-            class:active={$page.url.pathname === '/gallery' ? true : false}
-        >
-            <a href="/gallery">Gallery</a>
-        </li>
-        <li
-            aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}
-            class:active={$page.url.pathname === '/contact' ? true : false}
-        >
-            <a href="/contact">Contact me</a>
-        </li>
+        {#each navigation as navLink}
+            <li
+                aria-current={$page.url.pathname === navLink.linked_page.url ? 'page' : undefined}
+                class:active={$page.url.pathname === navLink.linked_page.url ? true : false}
+            >
+                <a href={navLink.linked_page.url}>{navLink.linked_page.uid}</a>
+            </li>
+        {/each}
         <li
             aria-current={$page.url.pathname === '/shop' ? 'page' : undefined}
             class:active={$page.url.pathname === '/shop' ? true : false}
@@ -91,7 +82,7 @@
                 margin-block-start: calc(var(--button-size) / 3 - 2 * 2px - 1px);
             }
 
-            @media only screen and (max-width: 1024px) {
+            @media only screen and (max-width: 900px) {
                 display: flex;
             }
         }

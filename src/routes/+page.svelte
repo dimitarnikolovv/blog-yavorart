@@ -1,6 +1,8 @@
 <script>
-    import BlogCard from '../components/BlogCard.svelte';
+    import Blog from '../components/Blog.svelte';
     import InfoCard from '../components/InfoCard.svelte';
+
+    export let data;
 </script>
 
 <svelte:head>
@@ -8,13 +10,9 @@
     <meta name="description" content="Yavor's blog" />
 </svelte:head>
 
-<InfoCard imageUrl="/images/portrait.jpg" />
+<InfoCard component={data.portfolio} />
 
-<BlogCard imageUrl="/images/garvan.jpg" />
-
-<BlogCard imageUrl="/images/vrabche.jpg" />
-
-<BlogCard imageUrl="/images/gola-jena.jpg" />
+<Blog posts={data.blogPosts} />
 
 <style lang="scss">
 </style>

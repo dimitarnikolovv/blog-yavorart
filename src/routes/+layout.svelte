@@ -1,9 +1,10 @@
 <script>
     import Header from '../components/Header.svelte';
+    export let data;
 </script>
 
 <div class="app">
-    <Header />
+    <Header menu={data.menu} />
 
     <main>
         <slot />

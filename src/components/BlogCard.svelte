@@ -1,29 +1,22 @@
 <script>
-    export let imageUrl;
+    import * as prismicH from '@prismicio/helpers';
+    export let post;
     let isActive = false;
 </script>
 
 <article class:active={isActive}>
     <div class="description">
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, suscipit voluptates.
-            Minima exercitationem deserunt illum vero minus, repellendus amet. Neque dolores aperiam
-            doloribus animi quasi voluptatibus explicabo soluta laudantium totam?
-        </p>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, veniam
-            reprehenderit! Temporibus perspiciatis iste corporis?
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nobis deserunt nostrum
-            quas, alias ea consequatur, repellendus nemo aperiam vitae esse, ad incidunt laborum
-            blanditiis.
-        </p>
+        <div class="content">
+            {@html prismicH.asHTML(post.data.content)}
+            <span class="date"
+                >Date: {new Date(post.last_publication_date).toLocaleDateString('bg')}</span
+            >
+        </div>
     </div>
     <div class="maskparent" class:active={isActive}>
-        <img src={imageUrl} alt="" aria-hidden="true" class="glow" />
+        <img src={prismicH.asImageSrc(post.data.image)} alt="" aria-hidden="true" class="glow" />
         <img
-            src={imageUrl}
+            src={prismicH.asImageSrc(post.data.image)}
             alt=""
             class="image"
             on:click={() => {
@@ -37,6 +30,9 @@
 </article>
 
 <style lang="scss">
+    span.date {
+        font-size: 0.8rem;
+    }
     article {
         width: 90%;
         margin-inline: auto;
@@ -53,10 +49,8 @@
         @media only screen and (max-width: 1024px) {
             flex-direction: column;
             flex-flow: column-reverse;
-
-            margin-block: 4rem;
-
             gap: 3rem;
+            margin-block: 4rem;
 
             div.maskparent {
                 max-width: 100%;
@@ -68,6 +62,8 @@
     div.description {
         background-color: #73737312;
         padding: 1.5em;
+        display: flex;
+        align-items: center;
     }
 
     div.maskparent {

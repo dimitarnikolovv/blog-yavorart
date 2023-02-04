@@ -1,5 +1,6 @@
 <script>
     import Navigation from './Navigation.svelte';
+    export let menu;
 </script>
 
 <header>
@@ -7,7 +8,7 @@
         <a href="/"> Yavor's art </a>
     </div>
 
-    <Navigation />
+    <Navigation navigation={menu.data.navigation} />
 </header>
 
 <style lang="scss">
