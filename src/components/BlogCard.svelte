@@ -66,6 +66,9 @@
         display: flex;
         align-items: center;
     }
+    :global(div.description .content p + p) {
+        margin-block-start: 1.5rem;
+    }
 
     div.maskparent {
         position: relative;
