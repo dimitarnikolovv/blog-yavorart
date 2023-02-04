@@ -50,15 +50,15 @@
 
 <style lang="scss">
     button {
+        cursor: pointer;
         position: fixed;
         z-index: 99;
         bottom: 1.2rem;
         right: 1.2rem;
         width: 50px;
         height: 50px;
-        border-radius: 100%;
-        cursor: pointer;
         border: none;
+        border-radius: 100%;
         background-color: rgba(255, 255, 255, 0.38);
         -webkit-backdrop-filter: blur(8px);
         backdrop-filter: blur(8px);
