@@ -1,11 +1,14 @@
 <script>
-  import BlogCard from "../components/BlogCard.svelte";
+    import BlogCard from '../components/BlogCard.svelte';
+    import InfoCard from '../components/InfoCard.svelte';
 </script>
 
 <svelte:head>
-  <title>Blog | Yavor Art</title>
-  <meta name="description" content="Yavor's blog" />
+    <title>Blog | Yavor Art</title>
+    <meta name="description" content="Yavor's blog" />
 </svelte:head>
+
+<InfoCard imageUrl="/images/portrait.jpg" />
 
 <BlogCard imageUrl="/images/garvan.jpg" />
 

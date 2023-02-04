@@ -21,8 +21,7 @@
         flex: 1;
         display: flex;
         flex-direction: column;
-        padding: 1rem;
-        padding-block-start: 5rem;
+        padding-block-start: 4.2rem;
         width: 100%;
         margin: 0 auto;
         color: var(--main-theme-text-color);

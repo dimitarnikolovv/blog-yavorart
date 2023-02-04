@@ -12,8 +12,6 @@
 
 <style lang="scss">
     header {
-        --header-height: 4.2rem;
-
         z-index: 100;
         position: fixed;
         width: 100%;
@@ -24,7 +22,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-inline: 8%;
+        padding-inline: 5%;
 
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
