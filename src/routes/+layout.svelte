@@ -1,5 +1,6 @@
 <script>
     import Header from '../components/Header.svelte';
+    import ScrollToTop from '../components/ScrollToTop.svelte';
     export let data;
 </script>
 
@@ -9,6 +10,8 @@
     <main>
         <slot />
     </main>
+
+    <ScrollToTop />
 </div>
 
 <style>

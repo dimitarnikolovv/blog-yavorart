@@ -34,6 +34,7 @@
     //     font-size: 0.8rem;
     // }
     article {
+        isolation: isolate;
         width: 90%;
         margin-inline: auto;
         margin-block: 6rem;
@@ -60,6 +61,7 @@
     }
 
     div.description {
+        z-index: 3;
         background-color: #73737312;
         padding: 1.5em;
         width: 100%;
