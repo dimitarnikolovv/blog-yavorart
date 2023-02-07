@@ -26,6 +26,7 @@
         display: flex;
         flex-direction: column;
         padding-block-start: 4.2rem;
+        padding-block-end: 6rem;
         width: 100%;
         margin: 0 auto;
         color: var(--main-theme-text-color);

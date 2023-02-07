@@ -1,6 +1,7 @@
 <script>
     import Blog from '../components/Blog.svelte';
     import InfoCard from '../components/InfoCard.svelte';
+    import LinkButton from '../components/LinkButton.svelte';
 
     export let data;
 </script>
@@ -13,6 +14,8 @@
 <InfoCard component={data.portfolio} />
 
 <Blog posts={data.blogPosts} />
+
+<LinkButton path="/gallery" text="Go to gallery" theme="light" />
 
 <style lang="scss">
 </style>

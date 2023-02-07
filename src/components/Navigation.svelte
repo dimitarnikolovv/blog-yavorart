@@ -20,7 +20,7 @@
                 aria-current={$page.url.pathname === navLink.linked_page.url ? 'page' : undefined}
                 class:active={$page.url.pathname === navLink.linked_page.url ? true : false}
             >
-                <a href={navLink.linked_page.url}>{navLink.linked_page.uid}</a>
+                <a prefetch href={navLink.linked_page.url}>{navLink.linked_page.uid}</a>
             </li>
         {/each}
         <li

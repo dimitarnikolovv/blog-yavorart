@@ -65,12 +65,12 @@
         background-color: #73737312;
         padding: 1.5em;
         width: 100%;
-        display: flex;
-        align-items: center;
     }
 
     div.maskparent {
         position: relative;
+        height: fit-content;
+        align-self: center;
 
         &.active {
             --fullscreen-height: 90vh;
