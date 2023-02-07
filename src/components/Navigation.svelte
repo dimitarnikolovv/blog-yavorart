@@ -16,17 +16,11 @@
     </button>
     <ul>
         {#each navigation as navLink}
-            <li
-                aria-current={$page.url.pathname === navLink.linked_page.url ? 'page' : undefined}
-                class:active={$page.url.pathname === navLink.linked_page.url ? true : false}
-            >
+            <li aria-current={$page.url.pathname === navLink.linked_page.url ? 'page' : undefined}>
                 <a prefetch href={navLink.linked_page.url}>{navLink.linked_page.uid}</a>
             </li>
         {/each}
-        <li
-            aria-current={$page.url.pathname === '/shop' ? 'page' : undefined}
-            class:active={$page.url.pathname === '/shop' ? true : false}
-        >
+        <li aria-current={$page.url.pathname === '/shop' ? 'page' : undefined}>
             <a href="/shop">Shop</a>
         </li>
     </ul>
@@ -49,7 +43,7 @@
                 transition: border 150ms ease-in-out;
             }
             &:hover,
-            &.active {
+            &[aria-current='page'] {
                 a {
                     border: 2px solid var(--main-theme-text-color);
                 }
