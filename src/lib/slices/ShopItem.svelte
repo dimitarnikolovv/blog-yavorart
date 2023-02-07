@@ -24,6 +24,10 @@
         margin-inline: auto;
         cursor: pointer;
 
+        @media only screen and (max-width: 900px) {
+            margin-inline: 5%;
+        }
+
         img {
             max-height: 70vh;
             box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.273);
