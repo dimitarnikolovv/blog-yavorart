@@ -4,7 +4,7 @@
     export let slice;
 
     function redirectToItemPage() {
-        goto(`/shop/${slice.primary.title[0].text}`);
+        goto(`/shop/${slice.primary.url[0].text.toLowerCase()}`);
     }
 </script>
 

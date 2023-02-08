@@ -4,11 +4,17 @@
     import LinkButton from '../../../components/LinkButton.svelte';
     export let data;
 
+    console.log(data.shop.data.body[0].primary);
+
     let item;
     data.shop.data.body.forEach((slice) => {
+        console.log(
+            slice.primary.url[0].text.toLowerCase() ===
+                $page.url.pathname.substring($page.url.pathname.lastIndexOf('/') + 1).toLowerCase()
+        );
         if (
-            slice.primary.title[0].text ===
-            $page.url.pathname.substring($page.url.pathname.lastIndexOf('/') + 1)
+            slice.primary.url[0].text.toLowerCase() ===
+            $page.url.pathname.substring($page.url.pathname.lastIndexOf('/') + 1).toLowerCase()
         )
             item = slice;
     });
@@ -22,11 +28,13 @@
 <div class="row">
     <img src={prismicH.asImageSrc(item.primary.image)} alt="" />
     <div class="description">
-        <h2>{item.primary.title[0].text}</h2>
+        <h2>"{item.primary.title[0].text}"</h2>
         <div class="content">
             {@html prismicH.asHTML(item.primary.description)}
         </div>
-        <span class="price">Price: €{item.primary.price}</span>
+        <span class="price"
+            >Price: €{item.primary.price != null ? item.primary.price : ' sold '}</span
+        >
         <LinkButton
             path={item.primary.buy_link.url}
             text={item.primary.is_sold ? 'Sold out' : 'Purchase'}
