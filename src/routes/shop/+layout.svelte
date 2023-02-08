@@ -9,14 +9,18 @@
 
 <div class="page-wrap">
     <h1>
-        {data.shop.data.page_title[0].text}
+        <a href="/shop">
+            {data.shop.data.page_title[0].text}
+        </a>
     </h1>
+    <slot name="back-button" />
 
     <slot />
 </div>
 
 <style lang="scss">
     div.page-wrap {
+        position: relative;
         background: #d9d9d9;
         color: black;
     }

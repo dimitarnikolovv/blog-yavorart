@@ -14,6 +14,7 @@
 <style lang="scss">
     div.link-button {
         margin-inline: auto;
+        margin-block: 1.5em;
     }
 
     .disabled {

@@ -2,16 +2,11 @@
     import { page } from '$app/stores';
     import * as prismicH from '@prismicio/helpers';
     import LinkButton from '../../../components/LinkButton.svelte';
+    import BackButton from '../../../components/BackButton.svelte';
     export let data;
-
-    console.log(data.shop.data.body[0].primary);
 
     let item;
     data.shop.data.body.forEach((slice) => {
-        console.log(
-            slice.primary.url[0].text.toLowerCase() ===
-                $page.url.pathname.substring($page.url.pathname.lastIndexOf('/') + 1).toLowerCase()
-        );
         if (
             slice.primary.url[0].text.toLowerCase() ===
             $page.url.pathname.substring($page.url.pathname.lastIndexOf('/') + 1).toLowerCase()
@@ -25,6 +20,8 @@
     <meta name="description" content="Shop" />
 </svelte:head>
 
+<BackButton slot="back-button" />
+
 <div class="row">
     <img src={prismicH.asImageSrc(item.primary.image)} alt="" />
     <div class="description">
@@ -32,9 +29,11 @@
         <div class="content">
             {@html prismicH.asHTML(item.primary.description)}
         </div>
-        <span class="price"
-            >Price: €{item.primary.price != null ? item.primary.price : ' sold '}</span
-        >
+        {#if !item.primary.is_sold}
+            <span class="price"
+                >Price: €{item.primary.price != null ? item.primary.price : ' sold '}</span
+            >
+        {/if}
         <LinkButton
             path={item.primary.buy_link.url}
             text={item.primary.is_sold ? 'Sold out' : 'Purchase'}
@@ -57,6 +56,7 @@
             flex-direction: column;
             align-items: center;
             gap: 1rem;
+            padding-block: 2rem;
 
             h2 {
                 text-align: center;

@@ -8,37 +8,84 @@
 
 <svelte:head>
     <title>Yavor's Art | {data.document.data.page_title[0].text}</title>
-    <meta name="description" content="Gallery of my drawings" />
+    <meta name="description" content="" />
 </svelte:head>
 
-<div class="page-content">
+{#if data.document.uid === 'contact'}
     <h1>
         {data.document.data.page_title[0].text}
     </h1>
+    <div class="wrapper">
+        <div class="content">{@html prismicH.asHTML(data.document.data.content)}</div>
+        <div class="devider" />
 
-    {#if data.document.data.content[0].text != ''}
-        <div class="content">
-            {@html prismicH.asHTML(data.document.data.content)}
+        <div class="slice">
+            <SliceZone slices={data.document.data.body} {components} />
         </div>
-    {/if}
-</div>
+    </div>
+{:else}
+    <div class="page-content">
+        <h1>
+            {data.document.data.page_title[0].text}
+        </h1>
 
-<SliceZone slices={data.document.data.body} {components} />
+        {#if data.document.data.content[0].text != ''}
+            <div class="content">
+                {@html prismicH.asHTML(data.document.data.content)}
+            </div>
+        {/if}
+    </div>
+
+    <SliceZone slices={data.document.data.body} {components} />
+{/if}
 
 <style lang="scss">
+    div.wrapper {
+        display: flex;
+        padding-block: 5rem;
+        gap: 1.5rem;
+
+        @media only screen and (max-width: 900px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+
+            div.devider {
+                display: none;
+            }
+            div.slice {
+                width: 90%;
+            }
+        }
+
+        .devider {
+            width: 2px;
+            background-color: white;
+        }
+        .slice {
+            width: 40%;
+        }
+
+        .content {
+            width: 60%;
+            padding: 1.5em;
+        }
+    }
     div.page-content {
         z-index: 3;
         position: relative;
         margin-block-end: 3rem;
-        h1 {
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 0.5em;
-        }
+
         div.content {
             background-color: #73737312;
             padding: 1.5em;
             width: 100%;
         }
+    }
+
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.5em;
     }
 </style>
