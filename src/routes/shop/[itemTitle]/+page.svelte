@@ -28,7 +28,7 @@
 <div class="row">
     <img src={prismicH.asImageSrc(item.primary.image)} alt="" />
     <div class="description">
-        <h2>"{item.primary.title[0].text}"</h2>
+        <h2>{item.primary.title[0].text}</h2>
         <div class="content">
             {@html prismicH.asHTML(item.primary.description)}
         </div>
