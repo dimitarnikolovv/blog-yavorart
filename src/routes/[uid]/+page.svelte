@@ -2,8 +2,15 @@
     import * as prismicH from '@prismicio/helpers';
     import { SliceZone } from '@prismicio/svelte';
     import * as components from '$lib/slices';
+    import { openModal } from 'svelte-modals';
+    import ModalForm from '../../components/ModalForm.svelte';
 
     export let data;
+    export let form;
+
+    $: if (form?.success) {
+        openModal(ModalForm);
+    }
 </script>
 
 <svelte:head>
@@ -49,6 +56,10 @@
             flex-direction: column;
             align-items: center;
             gap: 3rem;
+
+            div.content {
+                width: 100%;
+            }
 
             div.devider {
                 display: none;

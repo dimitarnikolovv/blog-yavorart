@@ -37,17 +37,14 @@ export const actions = {
 
         const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
             method: 'POST',
-            mode: 'no-cors',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Origin': '*',
             },
             body: JSON.stringify(data),
         });
 
-        console.log(response);
-
-        if (response.ok)
+        if (response.status == 200)
             return {
                 success: true,
             };

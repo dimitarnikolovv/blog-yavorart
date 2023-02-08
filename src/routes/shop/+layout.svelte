@@ -9,9 +9,7 @@
 
 <div class="page-wrap">
     <h1>
-        <a href="/shop">
-            {data.shop.data.page_title[0].text}
-        </a>
+        {data.shop.data.page_title[0].text}
     </h1>
     <slot name="back-button" />
 

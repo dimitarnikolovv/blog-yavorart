@@ -58,7 +58,7 @@
             rows="8"
             required
         />
-        {#if textContent != ''}
+        {#if textContent?.length > 5}
             <button type="submit">Send</button>
         {/if}
     </form>
