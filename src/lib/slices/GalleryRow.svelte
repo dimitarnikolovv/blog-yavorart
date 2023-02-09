@@ -24,6 +24,10 @@
         margin-inline: auto;
         margin-block-end: 15rem;
 
+        &:last-child {
+            margin-block-end: 5rem;
+        }
+
         @media only screen and (max-width: 1190px) {
             gap: 5vw;
         }

@@ -14,7 +14,7 @@
     <ScrollToTop />
 </div>
 
-<style>
+<style lang="scss">
     .app {
         display: flex;
         flex-direction: column;
@@ -30,5 +30,9 @@
         width: 100%;
         margin: 0 auto;
         color: var(--main-theme-text-color);
+
+        @media only screen and (max-width: 900px) {
+            padding-block-end: 3rem;
+        }
     }
 </style>

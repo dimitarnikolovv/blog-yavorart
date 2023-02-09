@@ -2,6 +2,9 @@
     import { page } from '$app/stores';
     export let navigation;
     let isOpen = false;
+    function handleLinkClick() {
+        isOpen = false;
+    }
 </script>
 
 <nav class:open={isOpen}>
@@ -17,11 +20,13 @@
     <ul>
         {#each navigation as navLink}
             <li aria-current={$page.url.pathname === navLink.linked_page.url ? 'page' : undefined}>
-                <a prefetch href={navLink.linked_page.url}>{navLink.linked_page.uid}</a>
+                <a prefetch href={navLink.linked_page.url} on:click={handleLinkClick}
+                    >{navLink.linked_page.uid}</a
+                >
             </li>
         {/each}
         <li aria-current={$page.url.pathname === '/shop' ? 'page' : undefined}>
-            <a href="/shop">Shop</a>
+            <a prefetch href="/shop" on:click={handleLinkClick}>Shop</a>
         </li>
     </ul>
 </nav>

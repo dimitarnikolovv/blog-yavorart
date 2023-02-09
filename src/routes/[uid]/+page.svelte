@@ -56,6 +56,7 @@
             flex-direction: column;
             align-items: center;
             gap: 3rem;
+            padding-block: 0;
 
             div.content {
                 width: 100%;
