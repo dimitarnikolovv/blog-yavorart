@@ -1,5 +1,6 @@
 <script>
     import Header from '../components/Header.svelte';
+    import Footer from '../components/Footer.svelte';
     import ScrollToTop from '../components/ScrollToTop.svelte';
     export let data;
 </script>
@@ -12,6 +13,8 @@
     </main>
 
     <ScrollToTop />
+
+    <Footer />
 </div>
 
 <style lang="scss">
@@ -25,14 +28,9 @@
         flex: 1;
         display: flex;
         flex-direction: column;
-        padding-block-start: 4.2rem;
-        padding-block-end: 6rem;
+        padding-block-start: var(--header-height);
         width: 100%;
         margin: 0 auto;
         color: var(--main-theme-text-color);
-
-        @media only screen and (max-width: 900px) {
-            padding-block-end: 3rem;
-        }
     }
 </style>

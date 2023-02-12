@@ -44,10 +44,11 @@
 
 <style lang="scss">
     div.row {
+        min-height: 81vh;
+        max-width: 90%;
         display: flex;
         justify-content: center;
         gap: 8rem;
-        max-width: 90%;
         padding-block: 5rem;
         margin-inline: auto;
 

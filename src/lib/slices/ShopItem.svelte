@@ -25,9 +25,11 @@
 
 <style lang="scss">
     section.image-wrap {
+        &:first-of-type {
+            --padding-block: calc(3rem);
+        }
         --padding-block: calc(var(--header-height) + 0.5rem);
         padding-block: var(--padding-block);
-        margin-block-end: 1rem;
         position: relative;
         width: fit-content;
         margin-inline: auto;
@@ -38,7 +40,7 @@
         }
 
         img {
-            max-height: 72vh;
+            max-height: 75vh;
             box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.273);
         }
 
