@@ -36,7 +36,7 @@
             {data.document.data.page_title[0].text}
         </h1>
 
-        {#if data.document.data.content[0].text != ''}
+        {#if data.document.data.content[0]?.text ?? false}
             <div class="content">
                 {@html prismicH.asHTML(data.document.data.content)}
             </div>

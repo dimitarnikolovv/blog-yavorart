@@ -1,5 +1,9 @@
+<script>
+    export let scrollToID = '';
+</script>
+
 <div class="wrap">
-    <a href="/shop">
+    <a href="/shop{scrollToID == '' ? '' : `#${scrollToID}`}">
         <svg
             fill="#000000"
             viewBox="0 0 24 24"
