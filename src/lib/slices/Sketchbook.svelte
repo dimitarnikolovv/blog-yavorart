@@ -2,20 +2,24 @@
     export let slice;
 
     const pdfLink = slice.primary.sketchbook_file.url;
-    const apiKey = '05aee1f33099441a';
+    const apiKey = '05aee1f33099441a'; //TODO move to .env
 
     let flipbook;
 
-    async function load() {
-        const req = await fetch(
-            `https://heyzine.com/api1/async?pdf=${pdfLink}&k=${apiKey}&tpl=c683c9059ed66a5d378c3489b0bf221f29b043d4.pdf`
-        );
+    (async function getFlipbook() {
+        const req = await fetch(`https://heyzine.com/api1/rest?pdf=${pdfLink}&k=${apiKey}`);
         flipbook = await req.json();
-    }
-    load();
+    })();
 </script>
 
+<pre>SLICE DATA: {JSON.stringify(slice, null, 2)}</pre>
+
+<!-- BUG Displays https://heyzine.com home page -->
+
+<!-- {#if flipbook && (flipbook?.state == 'processed' ?? false)} -->
 {#if flipbook}
+    <pre>FLIPBOOK DATA: {JSON.stringify(flipbook, null, 2)}</pre>
+
     <iframe title="sketchbook" src={flipbook.url} frameborder="0" />
 {/if}
 
@@ -23,6 +27,5 @@
     iframe {
         width: 100%;
         height: 75vh;
-        max-height: 75vh;
     }
 </style>
