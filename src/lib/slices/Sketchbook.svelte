@@ -7,18 +7,20 @@
     let flipbook;
 
     (async function getFlipbook() {
-        const req = await fetch(`https://heyzine.com/api1/rest?pdf=${pdfLink}&k=${apiKey}`);
+        const req = await fetch(
+            `https://heyzine.com/api1/rest?pdf=${pdfLink}&k=${apiKey}&tpl=097ed1f2a59f26d31f126af9dba68f5c60a10a42.pdf`
+        );
         flipbook = await req.json();
     })();
 </script>
 
-<pre>SLICE DATA: {JSON.stringify(slice, null, 2)}</pre>
+<!-- <pre>SLICE DATA: {JSON.stringify(slice, null, 2)}</pre> -->
 
 <!-- BUG Displays https://heyzine.com home page -->
 
 <!-- {#if flipbook && (flipbook?.state == 'processed' ?? false)} -->
 {#if flipbook}
-    <pre>FLIPBOOK DATA: {JSON.stringify(flipbook, null, 2)}</pre>
+    <!-- <pre>FLIPBOOK DATA: {JSON.stringify(flipbook, null, 2)}</pre> -->
 
     <iframe title="sketchbook" src={flipbook.url} frameborder="0" />
 {/if}
