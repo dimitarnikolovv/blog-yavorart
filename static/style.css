@@ -116,3 +116,7 @@ a {
 p + p {
     margin-block-start: 1.5rem;
 }
+
+img.logo-backs2 {
+    display: none !important;
+}

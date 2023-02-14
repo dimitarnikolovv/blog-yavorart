@@ -20,7 +20,7 @@
     <meta name="description" content="Shop" />
 </svelte:head>
 
-<BackButton slot="back-button" scrollToID={item.primary.url[0].text} />
+<BackButton slot="back-button" />
 
 <div class="row">
     <img src={prismicH.asImageSrc(item.primary.image)} alt="" />

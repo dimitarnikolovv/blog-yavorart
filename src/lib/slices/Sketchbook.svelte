@@ -1,33 +1,41 @@
 <script>
     export let slice;
 
-    const pdfLink = slice.primary.sketchbook_file.url;
-    const apiKey = '05aee1f33099441a'; //TODO move to .env
+    const pdfLink =
+        slice.primary.sketchbook_file.url +
+        `?v${encodeURIComponent(slice.primary.sketchbook_file.size)}`;
+
+    const apiKey = '05aee1f33099441a';
 
     let flipbook;
 
     (async function getFlipbook() {
         const req = await fetch(
-            `https://heyzine.com/api1/rest?pdf=${pdfLink}&k=${apiKey}&tpl=097ed1f2a59f26d31f126af9dba68f5c60a10a42.pdf`
+            `https://heyzine.com/api1/async?pdf=${encodeURIComponent(
+                pdfLink
+            )}&k=${encodeURIComponent(apiKey)}&tpl=7f1b28733fc1fe33bac75a1219b8069ff9b59a1a.pdf`
         );
         flipbook = await req.json();
     })();
 </script>
 
-<!-- <pre>SLICE DATA: {JSON.stringify(slice, null, 2)}</pre> -->
-
-<!-- BUG Displays https://heyzine.com home page -->
-
-<!-- {#if flipbook && (flipbook?.state == 'processed' ?? false)} -->
-{#if flipbook}
-    <!-- <pre>FLIPBOOK DATA: {JSON.stringify(flipbook, null, 2)}</pre> -->
-
-    <iframe title="sketchbook" src={flipbook.url} frameborder="0" />
-{/if}
+<div>
+    {#if flipbook && (flipbook?.state == 'processed' ?? false)}
+        <iframe title="sketchbook" src={flipbook.url} frameborder="0" />
+    {/if}
+</div>
 
 <style lang="scss">
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     iframe {
         width: 100%;
         height: 75vh;
+        @media only screen and (max-width: 780px) {
+            width: 90%;
+        }
     }
 </style>

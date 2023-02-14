@@ -1,9 +1,9 @@
-<script>
-    export let scrollToID = '';
-</script>
-
 <div class="wrap">
-    <a href="/shop{scrollToID == '' ? '' : `#${scrollToID}`}">
+    <button
+        on:click={() => {
+            history.back();
+        }}
+    >
         <svg
             fill="#000000"
             viewBox="0 0 24 24"
@@ -14,7 +14,7 @@
                 style="fill: rgb(0, 0, 0);"
             /></svg
         >
-    </a>
+    </button>
 </div>
 
 <style lang="scss">
@@ -34,7 +34,10 @@
             }
         }
 
-        a {
+        button {
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
             display: block;
             height: 2.3rem;
         }
