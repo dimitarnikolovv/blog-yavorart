@@ -13,7 +13,7 @@
         const req = await fetch(
             `https://heyzine.com/api1/async?pdf=${encodeURIComponent(
                 pdfLink
-            )}&k=${encodeURIComponent(apiKey)}&tpl=7f1b28733fc1fe33bac75a1219b8069ff9b59a1a.pdf`
+            )}&k=${encodeURIComponent(apiKey)}`
         );
         flipbook = await req.json();
     })();
