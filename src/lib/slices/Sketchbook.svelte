@@ -36,8 +36,5 @@
         border-radius: 3rem;
         width: 100%;
         height: 75vh;
-        @media only screen and (max-width: 780px) {
-            width: 90%;
-        }
     }
 </style>
