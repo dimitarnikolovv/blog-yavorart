@@ -81,7 +81,7 @@
                 margin-block-start: calc(var(--button-size) / 3 - 2 * 2px - 1px);
             }
 
-            @media only screen and (max-width: 900px) {
+            @media only screen and (max-width: 950px) {
                 display: flex;
             }
         }
@@ -100,12 +100,12 @@
             }
         }
 
-        @media only screen and (max-width: 900px) {
+        @media only screen and (max-width: 950px) {
             position: absolute;
             right: 0;
             top: 0;
             height: var(--header-height);
-            width: 70%;
+            width: fit-content;
 
             ul {
                 transform: translateX(120%);
