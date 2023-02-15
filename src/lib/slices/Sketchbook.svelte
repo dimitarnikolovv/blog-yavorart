@@ -32,6 +32,8 @@
         justify-content: center;
     }
     iframe {
+        background-color: white;
+        border-radius: 3rem;
         width: 100%;
         height: 75vh;
         @media only screen and (max-width: 780px) {
