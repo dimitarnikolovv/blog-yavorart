@@ -13,17 +13,17 @@
 
     (async function getFlipbook() {
         const req = await fetch(
-            `https://heyzine.com/api1/async?pdf=${encodeURIComponent(
+            `https://heyzine.com/api1/rest?pdf=${encodeURIComponent(
                 pdfLink
-            )}&k=${encodeURIComponent(apiKey)}&tpl=333fc4ccd6ad4cd5879f40198dbeeb764e5f1de7.pdf`
+            )}&k=${encodeURIComponent(apiKey)}`
         );
-        if (req.ok) flipbook = await req.json();
-        else error(503, 'A problem occurred getting the sketchbook. Please refresh this page :)');
+        if (req.ok) return (flipbook = await req.json());
     })();
 </script>
 
 <div>
-    {#if flipbook && (flipbook?.state === 'processed' ?? false)}
+    <!-- {#if flipbook && (flipbook?.state === 'processed' ?? false)} -->
+    {#if flipbook}
         <iframe title="sketchbook" src={flipbook.url} frameborder="0" />
     {:else}
         <div class="loader">Loading Content...</div>
