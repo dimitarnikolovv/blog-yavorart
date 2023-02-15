@@ -9,7 +9,7 @@
 
 <nav class:open={isOpen}>
     <button
-        name="navigation-toggler"
+        aria-label="Toggle navigation"
         on:click={() => {
             isOpen = !isOpen;
         }}

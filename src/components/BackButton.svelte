@@ -1,6 +1,6 @@
 <div class="wrap">
     <button
-        name="back-to-shop"
+        aria-label="Back"
         on:click={() => {
             history.back();
         }}
