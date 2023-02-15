@@ -9,6 +9,7 @@
 
 <nav class:open={isOpen}>
     <button
+        name="navigation-toggler"
         on:click={() => {
             isOpen = !isOpen;
         }}

@@ -1,5 +1,6 @@
 <div class="wrap">
     <button
+        name="back-to-shop"
         on:click={() => {
             history.back();
         }}
