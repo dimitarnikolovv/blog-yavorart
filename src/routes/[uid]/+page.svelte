@@ -101,7 +101,7 @@
         letter-spacing: 0.5em;
 
         @media only screen and (max-width: 780px) {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
     }
 </style>
