@@ -1,11 +1,11 @@
 <script>
-    import BlogCard from './BlogCard.svelte';
+    import BlogCard from '../../components/BlogCard.svelte';
 
-    export let posts;
+    export let slice;
 </script>
 
 <section aria-label="Blog Posts">
-    {#each posts as post}
+    {#each slice.items as post}
         <BlogCard {post} />
     {/each}
 </section>

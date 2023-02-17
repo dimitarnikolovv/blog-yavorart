@@ -4,7 +4,7 @@
 </script>
 
 <section class="info-card">
-    <img src={prismicH.asImageSrc(slice.primary.image)} alt="" />
+    <img src={prismicH.asImageSrc(slice.primary.image)} alt={slice.primary.image.alt} />
     <div class="content">
         <p>
             {@html prismicH.asHTML(slice.primary.description)}

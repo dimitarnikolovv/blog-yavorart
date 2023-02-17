@@ -9,14 +9,9 @@ export async function load({ fetch, request }) {
         return await client.getByUID('page', homepageUID);
     };
 
-    const blogPosts = async () => {
-        return await client.getAllByType('blog_post');
-    };
-
-    if ((await document()) && (await blogPosts())) {
+    if (await document()) {
         return {
             document: document(),
-            blogPosts: blogPosts(),
         };
     }
 

@@ -1,23 +1,21 @@
 <script>
     import * as prismicH from '@prismicio/helpers';
     export let post;
+
     let isActive = false;
 </script>
 
 <article class:active={isActive}>
     <div class="description">
         <div class="content">
-            {@html prismicH.asHTML(post.data.content)}
-            <!-- <span class="date"
-                >Date: {new Date(post.last_publication_date).toLocaleDateString('bg')}</span
-            > -->
+            {@html prismicH.asHTML(post.description)}
         </div>
     </div>
     <div class="maskparent" class:active={isActive}>
-        <img src={prismicH.asImageSrc(post.data.image)} alt="" aria-hidden="true" class="glow" />
+        <img src={prismicH.asImageSrc(post.image)} alt="" aria-hidden="true" class="glow" />
         <img
-            src={prismicH.asImageSrc(post.data.image)}
-            alt=""
+            src={prismicH.asImageSrc(post.image)}
+            alt={post.image.alt}
             class="image"
             on:click={() => {
                 isActive = !isActive;
@@ -30,9 +28,6 @@
 </article>
 
 <style lang="scss">
-    // span.date {
-    //     font-size: 0.8rem;
-    // }
     article {
         isolation: isolate;
         width: 90%;
