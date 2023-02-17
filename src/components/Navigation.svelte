@@ -1,6 +1,7 @@
 <script>
     import { page } from '$app/stores';
     export let navigation;
+
     let isOpen = false;
     function handleLinkClick() {
         isOpen = false;
@@ -20,9 +21,8 @@
     </button>
     <ul>
         {#each navigation as navLink}
-            <li aria-current={$page.url.pathname === navLink.linked_page.url ? 'page' : undefined}>
-                <a prefetch href={navLink.linked_page.url} on:click={handleLinkClick}
-                    >{navLink.linked_page.uid}</a
+            <li aria-current={$page.url.pathname === navLink.link.url ? 'page' : undefined}>
+                <a prefetch href={navLink.link.url} on:click={handleLinkClick}>{navLink.link.uid}</a
                 >
             </li>
         {/each}
@@ -59,6 +59,7 @@
         button {
             --button-size: 2.4rem;
             display: none;
+            cursor: pointer;
             flex-direction: column;
             gap: 0.4rem;
             margin-inline-start: calc(100% - (var(--button-size) * 1.5) - 4px);
@@ -82,7 +83,7 @@
                 margin-block-start: calc(var(--button-size) / 3 - 2 * 2px - 1px);
             }
 
-            @media only screen and (max-width: 950px) {
+            @media only screen and (max-width: 1060px) {
                 display: flex;
             }
         }
@@ -101,7 +102,7 @@
             }
         }
 
-        @media only screen and (max-width: 950px) {
+        @media only screen and (max-width: 1060px) {
             position: absolute;
             right: 0;
             top: 0;

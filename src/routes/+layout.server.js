@@ -4,10 +4,10 @@ import createClient from '$lib/prismicio';
 
 export async function load({ fetch, request }) {
     const client = createClient({ fetch, request });
-    const menu = await client.getSingle('menu');
+    const header = await client.getSingle('header');
 
-    if (menu) {
-        return { menu };
+    if (header) {
+        return { header };
     }
 
     error(404, 'Not found');

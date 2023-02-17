@@ -1,14 +1,17 @@
 <script>
+    import * as prismicH from '@prismicio/helpers';
     import Navigation from './Navigation.svelte';
-    export let menu;
+
+    export let content;
 </script>
 
 <header>
-    <div class="logo">
-        <a href="/"> Yavor's art </a>
-    </div>
+    <a href="/" class="logo">
+        <img src={prismicH.asImageSrc(content.data.logo)} alt="" />
+        <span> Yavor's art </span>
+    </a>
 
-    <Navigation navigation={menu.data.navigation} />
+    <Navigation navigation={content.data.navigation} />
 </header>
 
 <style lang="scss">
@@ -29,7 +32,14 @@
         -webkit-backdrop-filter: blur(8px);
 
         .logo {
-            a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            height: 100%;
+            img {
+                max-height: 80%;
+            }
+            span {
                 font-weight: 700;
                 font-size: 1.6rem;
             }

@@ -17,7 +17,7 @@
 
 <svelte:head>
     <title>BUY | {item.primary.title[0].text}</title>
-    <meta name="description" content="Shop" />
+    <meta name="description" content="Purchase {item.primary.title[0].text}" />
 </svelte:head>
 
 <BackButton slot="back-button" />

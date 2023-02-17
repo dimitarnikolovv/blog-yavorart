@@ -2,11 +2,6 @@
     export let data;
 </script>
 
-<svelte:head>
-    <title>Yavor's Art | {data.shop.data.page_title[0].text}</title>
-    <meta name="description" content="Shop" />
-</svelte:head>
-
 <div class="page-wrap">
     <h1>
         {data.shop.data.page_title[0].text}

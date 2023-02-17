@@ -6,7 +6,7 @@
 </script>
 
 <div class="app">
-    <Header menu={data.menu} />
+    <Header content={data.header} />
 
     <main>
         <slot />
