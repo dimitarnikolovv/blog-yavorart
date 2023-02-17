@@ -124,3 +124,11 @@ p + p {
 img.logo-backs2 {
     display: none !important;
 }
+
+button {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}

@@ -8,32 +8,29 @@
     }
 </script>
 
-<!-- <pre>{JSON.stringify(slice, null, 2)}</pre> -->
-
-<section
-    aria-label={slice.primary.title[0].text}
-    class="image-wrap"
-    id={slice.primary.url[0].text}
-    on:click={redirectToItemPage}
-    on:keypress={redirectToItemPage}
->
-    <img src={prismicH.asImageSrc(slice.primary.image)} alt="" />
-    {#if slice.primary.is_sold}
-        <div class="sold">Sold</div>
-    {/if}
+<section aria-label={slice.primary.title[0].text} class="image-wrap" id={slice.primary.url[0].text}>
+    <button
+        on:click={redirectToItemPage}
+        aria-label="Go to purchase page for {prismicH.asText(slice.primary.title)}"
+    >
+        <img src={prismicH.asImageSrc(slice.primary.image)} alt={slice.primary.image.alt} />
+        {#if slice.primary.is_sold}
+            <div class="sold">Sold</div>
+        {/if}
+    </button>
 </section>
 
 <style lang="scss">
     section.image-wrap {
+        --padding-block: calc(var(--header-height) + 0.5rem);
         &:first-of-type {
             --padding-block: calc(3rem);
         }
-        --padding-block: calc(var(--header-height) + 0.5rem);
+
         padding-block: var(--padding-block);
         position: relative;
         width: fit-content;
         margin-inline: auto;
-        cursor: pointer;
 
         @media only screen and (max-width: 900px) {
             max-width: 90%;

@@ -23,7 +23,7 @@
 <BackButton slot="back-button" />
 
 <div class="row">
-    <img src={prismicH.asImageSrc(item.primary.image)} alt="" />
+    <img src={prismicH.asImageSrc(item.primary.image)} alt={item.primary.image.alt} />
     <div class="description">
         <h2>{item.primary.title[0].text}</h2>
         <div class="content">

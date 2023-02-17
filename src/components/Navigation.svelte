@@ -1,7 +1,6 @@
 <script>
     import { page } from '$app/stores';
     import * as prismicH from '@prismicio/helpers';
-    import { claim_svg_element } from 'svelte/internal';
     export let navigation;
 
     let isOpen = false;
@@ -75,7 +74,7 @@
             border-radius: 0.4rem;
 
             div {
-                width: 90%;
+                width: 60%;
                 border: 1px solid white;
                 margin-inline: auto;
 
