@@ -1,6 +1,8 @@
 <script>
+    import { SliceZone } from '@prismicio/svelte';
+    import * as components from '$lib/slices';
     import Blog from '../components/Blog.svelte';
-    import InfoCard from '../components/InfoCard.svelte';
+
     import LinkButton from '../components/LinkButton.svelte';
 
     export let data;
@@ -11,11 +13,8 @@
     <meta name="description" content="Yavor's blog" />
 </svelte:head>
 
-<InfoCard component={data.portfolio} />
+<SliceZone slices={data.document.data.body} {components} />
 
 <Blog posts={data.blogPosts} />
 
 <LinkButton path="/gallery" text="Go to gallery" theme="light" />
-
-<style lang="scss">
-</style>

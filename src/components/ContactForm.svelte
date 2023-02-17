@@ -82,7 +82,8 @@
 
     input,
     textarea {
-        background-color: #ffffff;
+        background-color: var(--theme-accent-color);
+        color: var(--theme-accent-text-color);
         border: none;
         border-radius: 0.5rem;
         min-height: 3rem;
@@ -96,8 +97,8 @@
         position: absolute;
         bottom: 0.8rem;
         right: 0.8rem;
-        background-color: black;
-        color: white;
+        background-color: var(--theme-color);
+        color: var(--theme-text-color);
         padding: 0.2em 1.2em;
         border-radius: 20rem;
         text-transform: uppercase;

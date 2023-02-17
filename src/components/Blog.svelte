@@ -4,6 +4,11 @@
     export let posts;
 </script>
 
-{#each posts as post}
-    <BlogCard {post} />
-{/each}
+<section aria-label="Blog Posts">
+    {#each posts as post}
+        <BlogCard {post} />
+    {/each}
+</section>
+
+<style lang="scss">
+</style>

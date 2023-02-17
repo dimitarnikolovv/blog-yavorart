@@ -31,6 +31,6 @@
         padding-block-start: var(--header-height);
         width: 100%;
         margin: 0 auto;
-        color: var(--main-theme-text-color);
+        color: var(--theme-text-color);
     }
 </style>

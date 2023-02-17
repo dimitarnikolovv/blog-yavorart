@@ -42,11 +42,11 @@
 
     .contents {
         position: relative;
-        color: black;
+        color: var(--theme-accent-text-color);
         width: 450px;
         max-width: 100%;
         padding-block: 2rem;
-        background: white;
+        background: var(--theme-accent-color);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -79,7 +79,7 @@
         right: 1rem;
 
         background-color: transparent;
-        color: black;
+        color: var(--theme-accent-text-color);
         cursor: pointer;
         border: none;
         text-transform: inherit;

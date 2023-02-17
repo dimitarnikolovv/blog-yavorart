@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as prismic from '@prismicio/client';
 
 const repoName = 'yavorsart'; // Fill in your repository name

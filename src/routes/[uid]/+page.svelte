@@ -51,6 +51,20 @@
         display: flex;
         padding-block: 5rem;
         gap: 1.5rem;
+        align-items: center;
+
+        .devider {
+            width: 2px;
+            background-color: white;
+        }
+        .slice {
+            width: 40%;
+        }
+
+        .content {
+            width: 60%;
+            padding: 1.5em;
+        }
 
         @media only screen and (max-width: 900px) {
             flex-direction: column;
@@ -68,19 +82,6 @@
             div.slice {
                 width: 90%;
             }
-        }
-
-        .devider {
-            width: 2px;
-            background-color: white;
-        }
-        .slice {
-            width: 40%;
-        }
-
-        .content {
-            width: 60%;
-            padding: 1.5em;
         }
     }
     div.page-content {

@@ -19,8 +19,8 @@
 <style lang="scss">
     div.page-wrap {
         position: relative;
-        background: #d9d9d9;
-        color: black;
+        background: var(--theme-off-color);
+        color: var(--theme-color);
     }
     h1 {
         text-align: center;

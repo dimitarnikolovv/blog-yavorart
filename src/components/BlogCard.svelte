@@ -62,7 +62,7 @@
 
     div.description {
         z-index: 3;
-        background-color: #73737312;
+        background-color: var(--theme-semi-transparent-color);
         padding: 1.5em;
         width: 100%;
     }

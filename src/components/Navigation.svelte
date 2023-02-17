@@ -51,7 +51,7 @@
             &:hover,
             &[aria-current='page'] {
                 a {
-                    border: 2px solid var(--main-theme-text-color);
+                    border: 2px solid white;
                 }
             }
         }

@@ -16,7 +16,7 @@
         z-index: 100;
         position: fixed;
         width: 100%;
-        color: var(--main-theme-text-color);
+        color: white;
         text-transform: uppercase;
         background-color: rgba(16, 16, 16, 0.3);
         height: var(--header-height);

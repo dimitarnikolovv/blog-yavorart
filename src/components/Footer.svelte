@@ -11,7 +11,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
+        color: var(--theme-text-color);
         min-height: 5rem;
         text-align: center;
     }

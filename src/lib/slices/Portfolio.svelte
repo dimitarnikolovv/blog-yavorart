@@ -1,13 +1,13 @@
 <script>
     import * as prismicH from '@prismicio/helpers';
-    export let component;
+    export let slice;
 </script>
 
 <section class="info-card">
-    <img src={prismicH.asImageSrc(component.data.image)} alt="" />
+    <img src={prismicH.asImageSrc(slice.primary.image)} alt="" />
     <div class="content">
         <p>
-            {@html prismicH.asHTML(component.data.content)}
+            {@html prismicH.asHTML(slice.primary.description)}
         </p>
     </div>
 </section>
@@ -21,8 +21,8 @@
         padding-inline: 5%;
         padding-block: 5rem;
         min-height: calc(100vh - var(--header-height));
-        background: #d9d9d9;
-        color: black;
+        background: var(--theme-off-color);
+        color: var(--theme-accent-text-color);
 
         @media only screen and (max-width: 1024px) {
             flex-direction: column;

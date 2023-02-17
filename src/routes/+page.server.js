@@ -8,17 +8,14 @@ export async function load({ fetch, request }) {
     const document = async () => {
         return await client.getByUID('page', homepageUID);
     };
-    const portfolio = async () => {
-        return await client.getSingle('portfolio');
-    };
+
     const blogPosts = async () => {
         return await client.getAllByType('blog_post');
     };
 
-    if (document() && portfolio() && blogPosts()) {
+    if ((await document()) && (await blogPosts())) {
         return {
             document: document(),
-            portfolio: portfolio(),
             blogPosts: blogPosts(),
         };
     }
