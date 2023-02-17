@@ -55,6 +55,7 @@
 
         .devider {
             width: 2px;
+            min-height: 400px;
             background-color: white;
         }
         .slice {

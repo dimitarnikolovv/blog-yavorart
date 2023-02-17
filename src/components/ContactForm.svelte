@@ -67,7 +67,7 @@
 <style lang="scss">
     div {
         width: 100%;
-        padding-inline: 5rem;
+        padding-inline: 3rem;
 
         @media only screen and (max-width: 1170px) {
             padding-inline: 0;
