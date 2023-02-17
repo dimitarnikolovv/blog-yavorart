@@ -1,5 +1,7 @@
 <script>
     import { page } from '$app/stores';
+    import * as prismicH from '@prismicio/helpers';
+    import { claim_svg_element } from 'svelte/internal';
     export let navigation;
 
     let isOpen = false;
@@ -22,7 +24,8 @@
     <ul>
         {#each navigation as navLink}
             <li aria-current={$page.url.pathname === navLink.link.url ? 'page' : undefined}>
-                <a prefetch href={navLink.link.url} on:click={handleLinkClick}>{navLink.link.uid}</a
+                <a prefetch href={navLink.link.url} on:click={handleLinkClick}
+                    >{prismicH.asText(navLink.display_name)}</a
                 >
             </li>
         {/each}
