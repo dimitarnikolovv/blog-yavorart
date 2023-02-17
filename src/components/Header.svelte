@@ -37,7 +37,7 @@
             gap: 0.5rem;
             height: 100%;
             img {
-                max-height: 80%;
+                max-height: 70%;
             }
             span {
                 font-weight: 700;
