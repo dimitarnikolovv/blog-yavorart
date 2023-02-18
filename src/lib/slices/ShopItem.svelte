@@ -18,6 +18,8 @@
             <div class="sold">Sold</div>
         {/if}
     </button>
+
+    <h2>{slice.primary.title[0].text}</h2>
 </section>
 
 <style lang="scss">
@@ -34,6 +36,12 @@
 
         @media only screen and (max-width: 900px) {
             max-width: 90%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 400;
         }
 
         img {
