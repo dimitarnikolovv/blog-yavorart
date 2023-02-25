@@ -13,6 +13,9 @@
 </section>
 
 <style lang="scss">
+    :global(.info-card p) {
+        font-size: 1.2rem;
+    }
     section.info-card {
         display: flex;
         justify-content: center;
