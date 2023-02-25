@@ -28,7 +28,7 @@
 <svelte:window on:scroll={handleOnScroll} />
 
 {#if !hidden}
-    <button on:click={goTop} transition:fly>
+    <button on:click={goTop} transition:fly aria-label="scroll to top">
         <svg
             fill="#000000"
             version="1.1"
