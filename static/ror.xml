@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for http://yavorsart.com/</title>
+  <link>http://yavorsart.com/</link>
+
+<item>
+     <link>https://yavorsart.com/</link>
+     <title>Yavor&amp;#39;s Art | Home Page</title>
+     <description>Yavor's blog</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://yavorsart.com/gallery</link>
+     <title>Yavor&amp;#39;s Art | Gallery</title>
+     <description>Yavor&amp;#39;s Art | Gallery</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://yavorsart.com/e-sketchbook</link>
+     <title>Yavor&amp;#39;s Art | E-SketchBook</title>
+     <description>Yavor&amp;#39;s Art | E-SketchBook</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://yavorsart.com/contact</link>
+     <title>Yavor&amp;#39;s Art | Contact Me</title>
+     <description>Yavor&amp;#39;s Art | Contact Me</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://yavorsart.com/shop</link>
+     <title>Yavor&amp;#39;s Art | Shop</title>
+     <description>Shop</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
