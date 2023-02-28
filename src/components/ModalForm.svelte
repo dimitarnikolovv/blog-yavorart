@@ -81,5 +81,14 @@
         cursor: pointer;
         border: none;
         text-transform: inherit;
+
+        border: 2px solid white;
+        border-radius: 0.3rem;
+
+        transition: border 150ms ease;
+
+        &:hover {
+            border: 2px solid black;
+        }
     }
 </style>
