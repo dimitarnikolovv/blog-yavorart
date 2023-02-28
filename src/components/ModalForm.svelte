@@ -1,7 +1,5 @@
 <script>
     import { closeModal } from 'svelte-modals';
-
-    // provided by <Modals />
     export let isOpen;
 </script>
 
