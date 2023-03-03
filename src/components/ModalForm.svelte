@@ -81,6 +81,7 @@
         cursor: pointer;
         border: none;
         text-transform: inherit;
+        padding-inline: 0.4em;
 
         border: 2px solid white;
         border-radius: 0.3rem;
