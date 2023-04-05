@@ -26,19 +26,21 @@
     <img src={prismicH.asImageSrc(item.primary.image)} alt={item.primary.image.alt} />
     <div class="description">
         <h2>{item.primary.title[0].text}</h2>
-        <div class="content">
-            {@html prismicH.asHTML(item.primary.description)}
+        <div class="description-wrapper">
+            <div class="content">
+                {@html prismicH.asHTML(item.primary.description)}
+            </div>
+            {#if !item.primary.is_sold}
+                <span class="price"
+                    >Price: €{item.primary.price != null ? item.primary.price : ' sold '}</span
+                >
+            {/if}
+            <LinkButton
+                path={item.primary.buy_link.url}
+                text={item.primary.is_sold ? 'Sold out' : 'Purchase'}
+                active={!item.primary.is_sold}
+            />
         </div>
-        {#if !item.primary.is_sold}
-            <span class="price"
-                >Price: €{item.primary.price != null ? item.primary.price : ' sold '}</span
-            >
-        {/if}
-        <LinkButton
-            path={item.primary.buy_link.url}
-            text={item.primary.is_sold ? 'Sold out' : 'Purchase'}
-            active={!item.primary.is_sold}
-        />
     </div>
 </div>
 
@@ -47,20 +49,26 @@
         min-height: 81vh;
         max-width: 90%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 8rem;
         padding-block: 5rem;
         margin-inline: auto;
 
-        @media only screen and (max-width: 900px) {
+        @media only screen and (max-width: 1120px) {
             width: fit-content;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
             gap: 1rem;
             padding-block: 2rem;
 
             h2 {
                 text-align: center;
+            }
+
+            div.description-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
         }
 
