@@ -28,9 +28,9 @@
                 >
             </li>
         {/each}
-        <!-- <li aria-current={$page.url.pathname === '/shop' ? 'page' : undefined}>
+        <li aria-current={$page.url.pathname === '/shop' ? 'page' : undefined}>
             <a prefetch href="/shop" on:click={handleLinkClick}>Shop</a>
-        </li> -->
+        </li>
     </ul>
 </nav>
 
