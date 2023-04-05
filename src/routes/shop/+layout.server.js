@@ -3,6 +3,7 @@ import { error } from '@sveltejs/kit';
 import createClient from '$lib/prismicio';
 
 export async function load({ fetch, request }) {
+    return error(404, 'Not found');
     const client = createClient({ fetch, request });
     const shop = await client.getSingle('shop');
 
