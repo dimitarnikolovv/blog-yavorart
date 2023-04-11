@@ -74,6 +74,7 @@
 
         img {
             max-height: 60vh;
+            object-fit: contain;
             // width: fit-content;
         }
 
