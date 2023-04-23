@@ -2,6 +2,7 @@
     import { page } from '$app/stores';
     import * as prismicH from '@prismicio/helpers';
     export let navigation;
+    export let isShopActive;
 
     let isOpen = false;
     function handleLinkClick() {
@@ -28,9 +29,11 @@
                 >
             </li>
         {/each}
-        <!-- <li aria-current={$page.url.pathname === '/shop' ? 'page' : undefined}>
-            <a prefetch href="/shop" on:click={handleLinkClick}>Shop</a>
-        </li> -->
+        {#if isShopActive}
+            <li aria-current={$page.url.pathname === '/shop' ? 'page' : undefined}>
+                <a prefetch href="/shop" on:click={handleLinkClick}>Shop</a>
+            </li>
+        {/if}
     </ul>
 </nav>
 

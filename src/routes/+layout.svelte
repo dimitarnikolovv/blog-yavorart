@@ -18,7 +18,7 @@
 </script>
 
 <div class="app">
-    <Header content={data.header} />
+    <Header content={data.header} isShopActive={data.shop.data.is_active} />
 
     <main>
         <slot />

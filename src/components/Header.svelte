@@ -3,6 +3,7 @@
     import Navigation from './Navigation.svelte';
 
     export let content;
+    export let isShopActive;
 </script>
 
 <header>
@@ -11,7 +12,7 @@
         <span> Yavor's art </span>
     </a>
 
-    <Navigation navigation={content.data.navigation} />
+    <Navigation navigation={content.data.navigation} {isShopActive} />
 </header>
 
 <style lang="scss">

@@ -9,14 +9,19 @@ export async function load({ fetch, request }) {
         return await client.getSingle('header');
     };
 
+    const shop = async () => {
+        return await client.getSingle('shop');
+    };
+
     const colors = async () => {
         return await client.getSingle('color_theme');
     };
 
     if ((await header()) && (await colors())) {
         return {
-            header: header(),
             colors: colors(),
+            header: header(),
+            shop: shop(),
         };
     }
 
