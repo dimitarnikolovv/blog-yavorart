@@ -1,8 +1,7 @@
 <script>
     import { page } from '$app/stores';
     import * as prismicH from '@prismicio/helpers';
-    import LinkButton from '../../../components/LinkButton.svelte';
-    import BackButton from '../../../components/BackButton.svelte';
+    import { LinkButton, BackButton } from '$lib/components';
     export let data;
 
     let item;

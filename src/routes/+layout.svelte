@@ -1,7 +1,5 @@
 <script>
-    import Header from '../components/Header.svelte';
-    import Footer from '../components/Footer.svelte';
-    import ScrollToTop from '../components/ScrollToTop.svelte';
+    import { Header, Footer, ScrollToTop } from '$lib/components';
     import { onMount } from 'svelte';
     export let data;
 

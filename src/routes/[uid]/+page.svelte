@@ -3,7 +3,7 @@
     import { SliceZone } from '@prismicio/svelte';
     import * as components from '$lib/slices';
     import { openModal } from 'svelte-modals';
-    import ModalForm from '../../components/ModalForm.svelte';
+    import { ModalForm } from '$lib/components';
 
     export let data;
     export let form;

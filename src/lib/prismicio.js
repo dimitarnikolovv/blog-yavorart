@@ -1,11 +1,7 @@
 // @ts-nocheck
 import * as prismic from '@prismicio/client';
 
-const repoName = 'yavorsart'; // Fill in your repository name
-
-// This defines how you will structure URL paths in your project.
-// Update the types to match the Custom Types in your project, and edit
-// the paths to match the folder-based routing in your project.
+const repoName = 'yavorsart';
 const routes = [
     {
         type: 'page',

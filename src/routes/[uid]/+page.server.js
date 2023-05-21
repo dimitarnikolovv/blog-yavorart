@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit';
+import { SECRET_EMAIL_JS_ID, SECRET_EMAIL_JS_ACCESS_TOKEN } from '$env/static/private';
 import createClient from '$lib/prismicio';
 
 export async function load({ fetch, params, request }) {
@@ -25,8 +26,8 @@ export const actions = {
         const data = {
             service_id: 'contact_form_service',
             template_id: 'contact_form_template',
-            user_id: 'nW3Juf-Lr59vmcQUs',
-            accessToken: 'e7doLpaw7ubb5r6U8SdJj',
+            user_id: SECRET_EMAIL_JS_ID,
+            accessToken: SECRET_EMAIL_JS_ACCESS_TOKEN,
             template_params: {
                 from_name: name,
                 from_email: email,

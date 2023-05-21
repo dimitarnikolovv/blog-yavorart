@@ -1,5 +1,5 @@
 <script>
-    import BlogCard from '../../components/BlogCard.svelte';
+    import { BlogCard } from '$lib/components';
 
     export let slice;
 </script>

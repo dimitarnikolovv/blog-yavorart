@@ -2,7 +2,7 @@
     import { SliceZone } from '@prismicio/svelte';
     import * as components from '$lib/slices';
 
-    import LinkButton from '../components/LinkButton.svelte';
+    import { LinkButton } from '$lib/components';
 
     export let data;
 </script>
